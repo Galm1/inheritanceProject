@@ -1,28 +1,22 @@
 package com.company;
 
-public class EmailNotification extends Notification{
+public class TextNotification extends Notification{
 
     private String recipient;
-    private String smtpProvider;
-    protected String status = "fine";
+    private String smsProvider;
 
-    public EmailNotification(String subject, String body, String recipient, String smtpProvider) {
+    public TextNotification(String subject, String body, String recipient, String smsProvider) {
         super(subject, body);
         this.recipient = recipient;
-        this.smtpProvider = smtpProvider;
-
+        this.smsProvider = smsProvider;
     }
 
     public String getRecipient() {
         return recipient;
     }
 
-    public String getSmtpProvider() {
-        return smtpProvider;
-    }
-
-    public void sayHi(String s) {
-        System.out.println(s);
+    public String getSmsProvider() {
+        return smsProvider;
     }
 
     @Override
@@ -32,8 +26,8 @@ public class EmailNotification extends Notification{
                         ", Body - " + super.getBody() +
                         ", Created at - " + super.getCreatedAt() +
                         ", Recipient - " + getRecipient() +
-                        ", Provider - " + getSmtpProvider() +
-                        ", Status - " + super.getStatus()
+                        ", Provider - " + getSmsProvider()
         );
     }
+
 }
