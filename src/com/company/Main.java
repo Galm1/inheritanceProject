@@ -11,7 +11,10 @@ public class Main {
         textNotification.transport();
         emailNotification.transport();
 
-        emailNotification.sayHi("Hello!");
+        emailNotification.sayHi("Hello! from email");
+        textNotification.sayHi("Hello! from text");
+        emailNotification.printSomeText("some text");
+
         
     }
 }

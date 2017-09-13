@@ -26,6 +26,12 @@ public class EmailNotification extends Notification{
     }
 
     @Override
+    protected void printSomeText(String s) {
+        super.printSomeText(s);
+        System.out.println("This is from the EmailNotification override");
+    }
+
+    @Override
     public void transport() {
         System.out.println(
                 ", Subject - " + super.getSubject() +

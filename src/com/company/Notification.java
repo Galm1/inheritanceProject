@@ -35,6 +35,10 @@ public abstract class Notification {
         System.out.println(status);
     }
 
+    protected void printSomeText(String s) {
+        System.out.println(s);
+    }
+
     public abstract void transport() throws NoTransportException;
 
 }

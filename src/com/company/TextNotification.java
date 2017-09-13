@@ -1,5 +1,7 @@
 package com.company;
 
+import static com.company.Notification.*;
+
 public class TextNotification extends Notification{
 
     private String recipient;
@@ -17,6 +19,14 @@ public class TextNotification extends Notification{
 
     public String getSmsProvider() {
         return smsProvider;
+    }
+
+    public void sayHi(String s) {
+        System.out.println(s);
+    }
+
+    public void printSomeText(String s) {
+        super.printSomeText(s);
     }
 
     @Override
