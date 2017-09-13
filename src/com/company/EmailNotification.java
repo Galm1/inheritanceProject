@@ -42,4 +42,29 @@ public class EmailNotification extends Notification{
                         ", Status - " + super.getStatus()
         );
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        EmailNotification that = (EmailNotification) o;
+
+        if (recipient != null ? !recipient.equals(that.recipient) : that.recipient != null) return false;
+        if (smtpProvider != null ? !smtpProvider.equals(that.smtpProvider) : that.smtpProvider != null) return false;
+        return status != null ? status.equals(that.status) : that.status == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = recipient != null ? recipient.hashCode() : 0;
+        result = 31 * result + (smtpProvider != null ? smtpProvider.hashCode() : 0);
+        result = 31 * result + (status != null ? status.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    protected Object clone() {
+        return new EmailNotification("this is a clone", "here is a clone fore the body", "recipient clone", "annnnnd cloning the provider");
+    }
 }

@@ -10,6 +10,14 @@ public class Main {
 
         textNotification.transport();
         emailNotification.transport();
+        Object emailNotificationClone = emailNotification.clone();
+
+
+        if (emailNotificationClone.equals(emailNotification)){
+            System.out.println("Your clone is equal");
+        } else {
+            System.out.println("Your clone is not equal");
+        }
 
         emailNotification.sayHi("Hello! from email");
         textNotification.sayHi("Hello! from text");
